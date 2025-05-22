@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋塑料监测 - 科学探险队调研报告</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">海洋塑料监测</div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#background">研究背景</a></li>
+                <li><a href="#journal">科考日志</a></li>
+                <li><a href="#problems">问题分析</a></li>
+                <li><a href="#solutions">解决方案</a></li>
+                <li><a href="#team">团队介绍</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1>海洋塑料监测</h1>
+                <h2>科学探险队调研成果</h2>
+                <div class="team-members">
+                    <span>张三</span> · <span>李四</span> · <span>王五</span> · <span>赵六</span>
+                </div>
+                <a href="#background" class="btn-explore">开始探索</a>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 研究背景与数据 -->
+    <section id="background" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">研究背景与数据</h2>
+            
+            <div class="content-grid">
+                <div class="text-content" data-aos="fade-right">
+                    <h3>塑料总量与分布</h3>
+                    <p>总量估算：全球海洋中约有 <strong>75-199百万吨</strong> 塑料垃圾（《科学》期刊，2015年），每年新增约 <strong>800万-1100万吨</strong>（UNEP，2021年）。</p>
+                    <p>主要来源：80%来自陆地（如河流输入），20%来自渔业和航运。全球约1000条河流贡献了大部分塑料输入（其中亚洲河流占主导）。</p>
+                    <p>热点区域：北大西洋和太平洋的"垃圾带"（如大太平洋垃圾带，面积达160万平方公里，相当于3个法国）。</p>
+                </div>
+                <div class="visual-content" data-aos="fade-left">
+                    <div class="chart-container">
+                        <canvas id="plasticSourceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-grid reverse">
+                <div class="text-content" data-aos="fade-left">
+                    <h3>微塑料数据</h3>
+                    <p>浓度：表层海水中平均含 <strong>8-16微塑料颗粒/立方米</strong>（欧洲海域较高），深海沉积物中微塑料浓度可达 每克沉积物数千颗粒。</p>
+                    <p>来源：化妆品、纺织品洗涤（占35%）、塑料降解（>50%）。</p>
+                    <p>生物影响：90%的海鸟和55%的鲸类物种体内检出塑料（WWF报告）。</p>
+                </div>
+                <div class="visual-content" data-aos="fade-right">
+                    <img src="../images/generated/microplastics.jpg" alt="微塑料特写" class="feature-image">
+                </div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="text-content" data-aos="fade-right">
+                    <h3>监测技术与项目</h3>
+                    <p>卫星遥感：ESA（欧洲航天局）利用卫星监测大型塑料聚集区。</p>
+                    <p>浮标与无人机：The Ocean Cleanup项目在太平洋垃圾带部署系统，估算该区域约1.8万亿片塑料，重8万吨。</p>
+                    <p>公民科学：Adopt a Beach等计划收集海岸线数据，全球平均每公里海滩有5000+塑料碎片。</p>
+                </div>
+                <div class="visual-content" data-aos="fade-left">
+                    <img src="../images/generated/monitoring_tech.jpg" alt="监测技术" class="feature-image">
+                </div>
+            </div>
+            
+            <div class="content-grid reverse">
+                <div class="text-content" data-aos="fade-left">
+                    <h3>区域差异</h3>
+                    <p>地中海：微塑料浓度高达 每平方公里<strong>116万个颗粒</strong>（UNEP）。</p>
+                    <p>东南亚：印尼、菲律宾等国的河流输入占全球总量的<strong>25%</strong>以上。</p>
+                    <p>北极：冰芯中检出微塑料，表明污染已蔓延至偏远地区。</p>
+                </div>
+                <div class="visual-content" data-aos="fade-right">
+                    <div class="chart-container">
+                        <canvas id="regionComparisonChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="data-sources" data-aos="fade-up">
+                <h3>数据来源与报告</h3>
+                <div class="sources-grid">
+                    <div class="source-item">
+                        <h4>学术研究</h4>
+                        <p>《自然》《科学》期刊的多篇论文（如Lebreton et al., 2018的河流输入模型）。</p>
+                    </div>
+                    <div class="source-item">
+                        <h4>国际组织</h4>
+                        <p>UNEP（联合国环境署）：《从污染到解决方案》报告（2021）。</p>
+                        <p>IUCN：微塑料对海洋生态的评估。</p>
+                        <p>OECD：预测到2060年，全球塑料产量将翻三倍，海洋污染加剧。</p>
+                    </div>
+                    <div class="source-item">
+                        <h4>数据库</h4>
+                        <p>NOAA（美国海洋大气局）的海洋垃圾监测系统。</p>
+                        <p>EMODnet（欧洲海洋数据网络）的塑料分布地图。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科考日志 -->
+    <section id="journal" class="section journal-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">科考日志</h2>
+            
+            <div class="team-intro" data-aos="fade-up">
+                <h3>我是谁？</h3>
+                <p>我们是科考探险组（成员：张三、李四、王五、赵六），一支致力于海洋塑料污染研究的跨学科团队。本次科考任务聚焦于微塑料分布、洋流输运机制及生态风险评估，并借助AI技术提升监测效率。我是团队的AI助手，负责数据整合、图像分析及实时决策支持。</p>
+                <img src="../images/generated/team_research.jpg" alt="科考团队" class="team-image" data-aos="zoom-in">
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>触目惊心的污染现状</h3>
+                        <p>宏观垃圾：在目标海域（模拟大太平洋垃圾带）发现高密度塑料堆积，包括渔网、泡沫塑料和包装袋，验证了遥感监测中"160万平方公里垃圾带"的估算。</p>
+                        <p>微塑料入侵：通过傅里叶红外光谱（FTIR）分析，从海水样本中检出<strong>聚乙烯（PE）和聚丙烯（PP）</strong>颗粒，与化妆品、纺织品洗涤排放源高度匹配。</p>
+                        <p>生物受害证据：解剖局部鱼类样本发现，90%的个体消化道含微塑料，部分幼体出现发育畸形。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>数据驱动的规律揭示</h3>
+                        <p>洋流的作用：AI模型结合历史洋流数据，预测了塑料从东南亚河流向监测区的输运路径，与实际分布吻合度达82%。</p>
+                        <p>公民科学的补充：整合全球"Adopt a Beach"项目数据，发现海岸线塑料碎片密度与人类活动指数呈正相关（R²=0.76）。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-applications" data-aos="fade-up">
+                <h3>AI辅助研究方法</h3>
+                <img src="../images/generated/ai_analysis.jpg" alt="AI辅助分析" class="ai-image">
+                
+                <div class="ai-grid">
+                    <div class="ai-item" data-aos="zoom-in">
+                        <h4>高效数据处理</h4>
+                        <p>图像识别：AI在10分钟内完成了无人机拍摄的2000张图像分类，标识出塑料热点区（准确率94%），而人工需耗时3天。</p>
+                        <p>光谱分析加速：FTIR原始数据经AI算法解析，微塑料成分鉴定时间缩短60%。</p>
+                    </div>
+                    
+                    <div class="ai-item" data-aos="zoom-in" data-aos-delay="100">
+                        <h4>模拟与预测</h4>
+                        <p>污染扩散模型：AI模拟了未来5年塑料在洋流作用下的扩散趋势，显示北极海域污染风险将上升35%。</p>
+                        <p>风险评估预警：基于生物富集数据，AI生成生态风险热力图，提示鲨鱼、金枪鱼等高位物种为优先监测对象。</p>
+                    </div>
+                    
+                    <div class="ai-item" data-aos="zoom-in" data-aos-delay="200">
+                        <h4>公众参与赋能</h4>
+                        <p>自动生成科普报告：AI将科考数据转化为可视化图表与多语言故事（如"海龟的塑料日记"），用于公民科学宣传。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="future-plans" data-aos="fade-up">
+                <h3>未来研究计划</h3>
+                
+                <div class="plans-grid">
+                    <div class="plan-item" data-aos="fade-right">
+                        <h4>填补研究空白</h4>
+                        <p>深海采样：计划使用ROV机器人协同AI声呐，对未被充分研究的深海微塑料进行垂直分布监测。</p>
+                        <p>毒性实验：与实验室合作，AI将辅助设计微塑料对珊瑚共生藻类的长期毒性模拟实验。</p>
+                    </div>
+                    
+                    <div class="plan-item" data-aos="fade-up">
+                        <h4>技术升级</h4>
+                        <p>AI+卫星遥感：训练更高精度的塑料识别模型，区分水中塑料与自然漂浮物（如藻类）。</p>
+                        <p>区块链数据存证：用AI构建不可篡改的污染数据库，推动国际监测标准统一。</p>
+                    </div>
+                    
+                    <div class="plan-item" data-aos="fade-left">
+                        <h4>行动呼吁</h4>
+                        <p>公民科学2.0：开发AI小程序，鼓励公众上传垃圾照片并自动生成污染地图。</p>
+                        <p>政策建议：基于AI分析结果，向UNEP提交《亚洲河流塑料输入管控方案》。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 问题分析 -->
+    <section id="problems" class="section problems-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">选题领域可能存在的问题</h2>
+            
+            <div class="problems-grid">
+                <div class="problem-card" data-aos="flip-left">
+                    <h3>监测技术与方法的局限性</h3>
+                    <div class="problem-content">
+                        <h4>采样偏差</h4>
+                        <p>现有技术（如拖网、浮标）主要针对表层海水（0-5米），对深海（>200米）和底层沉积物的塑料分布数据严重不足，导致全球塑料总量估算误差高达60%（《自然》期刊2022年研究）。</p>
+                        <p>微塑料采样网孔径标准不统一（常用330μm网，但<20μm的纳米塑料可能被漏检）。</p>
+                        
+                        <h4>识别技术瓶颈</h4>
+                        <p>遥感技术难以区分水面塑料与自然漂浮物（如藻类、泡沫），误判率超30%（ESA 2023报告）。</p>
+                        <p>实验室分析依赖傅里叶红外光谱（FTIR）和拉曼光谱，但无法实时原位检测，且对染色/老化塑料的识别准确率下降至70%以下。</p>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="flip-left" data-aos-delay="100">
+                    <h3>数据标准化与整合难题</h3>
+                    <div class="problem-content">
+                        <h4>全球数据孤岛</h4>
+                        <p>不同国家和机构使用差异化的采样方法（如网具尺寸、采样深度）、计量单位（颗粒/立方米 vs 重量浓度），导致数据无法直接对比（OECD 2023年批评）。</p>
+                        <p>公民科学项目（如海滩清理）数据质量参差不齐，缺乏统一录入规范。</p>
+                        
+                        <h4>长期动态数据缺失</h4>
+                        <p>现有监测多为单次快照式调查，缺乏塑料输运、降解速率的连续追踪，难以预测污染趋势。</p>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="flip-left" data-aos-delay="200">
+                    <h3>生态影响评估的复杂性</h3>
+                    <div class="problem-content">
+                        <h4>毒性机制不清</h4>
+                        <p>微塑料与附着污染物（如PCBs、重金属）的协同效应、纳米塑料穿透生物细胞屏障的路径仍属研究空白（IUCN红皮书2024）。</p>
+                        <p>实验室剂量（高浓度）与真实环境暴露（低浓度长期）的生态相关性存疑。</p>
+                        
+                        <h4>食物链传递量化困难</h4>
+                        <p>目前仅能检测生物体内塑料含量，但对其在营养级间的富集系数、人类健康风险缺乏模型支撑。</p>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="flip-left" data-aos-delay="300">
+                    <h3>污染源头追溯困境</h3>
+                    <div class="problem-content">
+                        <h4>塑料指纹缺失</h4>
+                        <p>除少数特殊塑料（如树脂微珠）可溯源至化妆品外，90%的环境塑料无法匹配具体行业或企业来源（UNEP溯源报告2023）。</p>
+                        <p>河流输入模拟依赖有限监测点，对非法倾倒、暴雨冲刷等突发事件的量化不足。</p>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="flip-left" data-aos-delay="400">
+                    <h3>应对措施的技术经济瓶颈</h3>
+                    <div class="problem-content">
+                        <h4>清理成本失衡</h4>
+                        <p>大太平洋垃圾带清理成本高达5-10美元/公斤塑料，而再生塑料售价仅0.3美元/公斤（The Ocean Cleanup经济评估）。</p>
+                        <p>可降解塑料在海洋环境中的实际降解效率不足30%（MIT 2024实验数据）。</p>
+                        
+                        <h4>政策执行落差</h4>
+                        <p>国际公约（如《全球塑料条约》）缺乏强制性减排目标，且发展中国家监测能力建设滞后。</p>
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="flip-left" data-aos-delay="500">
+                    <h3>新兴挑战与未知领域</h3>
+                    <div class="problem-content">
+                        <h4>纳米塑料的检测危机</h4>
+                        <p>现有设备难以检测<1μm的纳米塑料，但其可能穿透血脑屏障（《科学》期刊2024年小鼠实验警示）。</p>
+                        
+                        <h4>极地与深海新热点</h4>
+                        <p>北极海冰微塑料浓度10年增长20倍，但极端环境采样成功率不足50%。</p>
+                        
+                        <h4>生物降解的副作用</h4>
+                        <p>部分"可生物降解塑料"在海洋中仅碎裂为微塑料，加剧污染（东京大学2023年研究）。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解决方案 -->
+    <section id="solutions" class="section solutions-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">可行的解决方案</h2>
+            
+            <div class="solutions-overview" data-aos="fade-up">
+                <img src="../images/generated/solutions.jpg" alt="解决方案概览" class="solutions-image">
+            </div>
+            
+            <div class="solutions-categories">
+                <div class="solution-category" data-aos="fade-right">
+                    <h3>监测技术创新</h3>
+                    
+                    <div class="solution-item">
+                        <h4>全水深监测技术</h4>
+                        <p>部署 智能深潜机器人（AUV/ROV） 搭载高光谱成像仪和激光拉曼探头，实现2000米以深塑料的自动采样与成分分析（如中国\"海龙III号\"2024年试验）。</p>
+                        <p>开发 纳米塑料磁性捕获技术：利用功能化磁性纳米颗粒（如Fe₃O₄@SiO₂）选择性吸附水体中纳米塑料，配合表面增强拉曼检测（SERS），灵敏度提升至0.1μm（Nature Methods 2023）。</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>遥感技术优化</h4>
+                        <p>发射 专用塑料监测卫星（如ESA计划中的\"PlasticWatch\"卫星），结合AI多光谱分析算法，将塑料与藻类的区分准确率提升至95%（2025年目标）。</p>
+                        <p>无人机群组网：采用 仿生蝠鲼无人机 进行低空（<50米）毫米级分辨率扫描，覆盖近岸复杂水域。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-category" data-aos="fade-left">
+                    <h3>数据标准与整合</h3>
+                    
+                    <div class="solution-item">
+                        <h4>全球数据协议</h4>
+                        <p>由UNEP牵头制定 《全球海洋塑料监测标准1.0》，强制规定：</p>
+                        <ul>
+                            <li>采样网孔径统一为300μm（兼容微塑料主流研究）</li>
+                            <li>数据格式采用区块链存证（如IBM开发的\"PlasticChain\"系统）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>动态数据库建设</h4>
+                        <p>建立 海洋塑料数字孪生系统，整合卫星、浮标、公民科学数据，实时模拟塑料输运路径（类似欧盟\"Digital Twin Ocean\"计划）。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-category" data-aos="fade-right">
+                    <h3>生态影响评估</h3>
+                    
+                    <div class="solution-item">
+                        <h4>毒性评估新方法</h4>
+                        <p>类器官芯片技术：用鱼肠道类器官模拟微塑料长期暴露效应，替代传统动物实验（哈佛大学Wyss研究所2024年成果）。</p>
+                        <p>稳定同位素标记法：在塑料生产阶段添加⁶⁵Zn等示踪剂，精准追踪食物链传递过程（挪威海洋研究所方案）。</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>生物标志物库</h4>
+                        <p>筛选 塑料敏感基因（如斑马鱼CYP1A基因表达量），建立快速生态风险预警体系。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-category" data-aos="fade-left">
+                    <h3>污染源追溯</h3>
+                    
+                    <div class="solution-item">
+                        <h4>塑料指纹溯源</h4>
+                        <p>立法强制塑料制造商添加 量子点荧光标记，不同企业使用独特波长组合（如巴斯夫开发的\"PlasticID\"技术）。</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>河流拦截工程</h4>
+                        <p>在东南亚重点河流（如湄公河、雅鲁藏布江）部署 \"垃圾拦截轮\"系统（类似荷兰的Interceptor），配合AI分拣机器人，目标截留80%的塑料输运量。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-category" data-aos="fade-right">
+                    <h3>清理与政策</h3>
+                    
+                    <div class="solution-item">
+                        <h4>低成本清理技术</h4>
+                        <p>真菌生物降解：大规模培养黄孢原毛平革菌（可降解PE），在垃圾带设置浮动培养舱（2024年印尼试验降解率65%）。</p>
+                        <p>磁流体回收：将四氧化三铁纳米流体注入水体，通过磁场分离微塑料（MIT 2023年实验室阶段）。</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>政策工具箱</h4>
+                        <p>塑料税改革：按产品不可回收性阶梯征税（如欧盟2027年将发泡塑料税提高至800欧元/吨）。</p>
+                        <p>延伸生产者责任（EPR）：要求饮料企业承担包装回收成本的140%（如加州AB 2784法案）。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-category" data-aos="fade-left">
+                    <h3>公众参与</h3>
+                    
+                    <div class="solution-item">
+                        <h4>公民科学2.0</h4>
+                        <p>开发 \"PlasticScan\"APP：用户拍摄海滩垃圾，AI自动识别类型并关联溯源数据库，奖励环保积分（已在新西兰试点）。</p>
+                    </div>
+                    
+                    <div class="solution-item">
+                        <h4>游戏化干预</h4>
+                        <p>推出 \"塑料猎人\"AR游戏：青少年通过清理虚拟海洋垃圾解锁科普内容，全球排名前100的学校获科研船参观资格（WWF与Pokémon GO团队合作项目）。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="implementation-roadmap" data-aos="fade-up">
+                <h3>实施路径图</h3>
+                
+                <div class="roadmap">
+                    <div class="roadmap-item" data-aos="zoom-in">
+                        <div class="roadmap-time">短期<br>2024-2026</div>
+                        <div class="roadmap-content">完成监测标准制定，部署10%的河流拦截系统</div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="roadmap-time">中期<br>2027-2030</div>
+                        <div class="roadmap-content">实现50%塑料可溯源，深海监测覆盖率提升至30%</div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="roadmap-time">长期<br>2031-2035</div>
+                        <div class="roadmap-content">全球塑料入海量减少60%，建立生态风险早期预警网络</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="success-factors" data-aos="fade-up">
+                <h3>关键成功要素</h3>
+                
+                <div class="factors-grid">
+                    <div class="factor-item" data-aos="fade-right">
+                        <h4>跨国科技联盟</h4>
+                        <p>如中美\"海洋塑料联合创新中心\"共享专利池。</p>
+                    </div>
+                    
+                    <div class="factor-item" data-aos="fade-left">
+                        <h4>商业模式创新</h4>
+                        <p>将回收塑料转化为3D打印线材（如Adidas Ocean Plastic鞋），形成经济闭环。</p>
+                    </div>
+                </div>
+                
+                <p class="conclusion" data-aos="fade-up">通过技术革命、制度重构和全球协作的三轮驱动，海洋塑料监测与管理体系有望在未来十年实现质的飞跃。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team" class="section team-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">科学探险队</h2>
+            
+            <div class="team-description" data-aos="fade-up">
+                <p>我们是一支致力于海洋塑料污染研究的跨学科团队，本次科考任务聚焦于微塑料分布、洋流输运机制及生态风险评估，并借助AI技术提升监测效率。</p>
+            </div>
+            
+            <div class="team-members-grid">
+                <div class="member-card" data-aos="flip-up">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">张</div>
+                    </div>
+                    <h3>张三</h3>
+                    <p class="member-role">海洋生物学家</p>
+                    <p class="member-desc">专注于微塑料对海洋生物的影响研究，负责生物样本采集与分析。</p>
+                </div>
+                
+                <div class="member-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">李</div>
+                    </div>
+                    <h3>李四</h3>
+                    <p class="member-role">环境化学专家</p>
+                    <p class="member-desc">负责海水样本中微塑料的光谱分析与化学成分鉴定。</p>
+                </div>
+                
+                <div class="member-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">王</div>
+                    </div>
+                    <h3>王五</h3>
+                    <p class="member-role">遥感技术工程师</p>
+                    <p class="member-desc">负责卫星与无人机监测系统的开发与数据处理。</p>
+                </div>
+                
+                <div class="member-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">赵</div>
+                    </div>
+                    <h3>赵六</h3>
+                    <p class="member-role">AI与数据科学家</p>
+                    <p class="member-desc">负责开发AI模型，整合多源数据并进行预测分析。</p>
+                </div>
+            </div>
+            
+            <div class="team-image-container" data-aos="zoom-in">
+                <img src="../images/generated/team_research.jpg" alt="科考团队工作场景" class="team-large-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>海洋塑料监测</h3>
+                    <p>科学探险队调研报告</p>
+                    <p class="copyright">© 2025 科学探险队版权所有</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>参考资料</h4>
+                    <ul>
+                        <li>UNEP《从污染到解决方案》报告（2021）</li>
+                        <li>《科学》期刊海洋塑料研究（2015-2024）</li>
+                        <li>NOAA海洋垃圾监测系统</li>
+                        <li>The Ocean Cleanup项目数据</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p>邮箱：contact@science-explorers.org</p>
+                    <p>地址：科学探险队研究中心</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
